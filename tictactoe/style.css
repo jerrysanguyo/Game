@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f9f1c7; 
+    background-image: url('bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff6f61; 
+    text-shadow: 2px 2px #ffcccb; 
+}
+
+#scores {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 10px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background-color: #ffecd1; 
+    border: 2px solid #ffb347; 
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #ffdfba; 
+    transform: scale(1.1);
+}
+
+.cell.taken {
+    pointer-events: none;
+    background-color: #ffc3a0; 
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #ff6f61;
+    text-shadow: 1px 1px #ffcccb;
+}
+
+#resetButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ffb347; 
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#resetButton:hover {
+    background-color: #ff9f40;
+    transform: scale(1.05);
+}
