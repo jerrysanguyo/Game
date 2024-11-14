@@ -1,6 +1,8 @@
 let player = document.getElementById('player');
 let obstacle = document.getElementById('obstacle');
 let scoreDisplay = document.getElementById('score');
+let jumpSound = document.getElementById('jumpSound');
+let gameOverSound = document.getElementById('gameOverSound');
 let isJumping = false;
 let score = 0;
 
@@ -13,6 +15,7 @@ document.addEventListener('click', jump);
 
 function jump() {
   if (isJumping) return;
+  jumpSound.play(); // Play sound when jumping
   isJumping = true;
   let jumpHeight = parseInt(player.style.bottom);
 
@@ -44,17 +47,16 @@ setInterval(() => {
   timeElapsed += 1;
 
   if (timeElapsed % 10 === 0) {
-    obstacleSpeed -= 0.2; 
+    obstacleSpeed -= 0.2;
     if (obstacleSpeed < 1) obstacleSpeed = 1;
     updateObstacleSpeed();
   }
 }, 1000);
 
 function updateObstacleSpeed() {
-    
-  obstacle.style.animation = 'none'; 
-  obstacle.offsetHeight; 
-  obstacle.style.animation = `moveObstacle ${obstacleSpeed}s linear infinite`; // Apply new animation
+  obstacle.style.animation = 'none';
+  obstacle.offsetHeight;
+  obstacle.style.animation = `moveObstacle ${obstacleSpeed}s linear infinite`;
 }
 
 setInterval(() => {
@@ -66,6 +68,7 @@ setInterval(() => {
     playerRect.right > obstacleRect.left &&
     playerRect.bottom > obstacleRect.top
   ) {
+    gameOverSound.play(); // Play sound when game over
     alert('Game Over! Your score: ' + score);
     score = 0;
     scoreDisplay.textContent = 'Score: 0';

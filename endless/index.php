@@ -12,6 +12,8 @@
     <div id="obstacle"></div>
     <div id="score">Score: 0</div>
   </div>
+  <audio id="jumpSound" src="jump-sound.mp3"></audio>
+  <audio id="gameOverSound" src="game-over-sound.mp3"></audio>
   <script src="game.js"></script>
 </body>
 </html>

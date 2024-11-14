@@ -1,58 +1,64 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #cce7ff; /* Light sky-blue background */
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('bg-kids.jpg'); /* A fun, kid-friendly background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#player {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  width: 100px; /* Slightly bigger for more visibility */
+  height: 100px;
+  background-image: url('player-cartoon.png'); /* Cartoonish player character */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#obstacle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90px; /* More engaging size */
+  height: 90px;
+  background-image: url('obstacle-cartoon.png'); /* Fun, cartoonish obstacle */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveObstacle 3s linear infinite;
+}
+
+@keyframes moveObstacle {
+  from {
+    right: -90px;
   }
-  
-  .game-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url('bg.jpg'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  to {
+    right: 100%;
   }
-  
-  #player {
-    position: absolute;
-    bottom: 0px;
-    left: 50px;
-    width: 80px; 
-    height: 80px; 
-    background-image: url('player.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  #obstacle {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 80px; 
-    height: 80px; 
-    background-image: url('obstacle.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: moveObstacle 2s linear infinite;
-  }
-  
-  @keyframes moveObstacle {
-    from {
-      right: -80px; 
-    }
-    to {
-      right: 100%;
-    }
-  }
-  
-  #score {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: white;
-    font-family: sans-serif;
-  }
-  
+}
+
+#score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  color: #ff4081; /* Bright pink */
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ff4081;
+}
+
+
